@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes';
 import { Sun, Moon } from 'lucide-react';
 
 export const ThemeToggle: React.FC<{ className?: string }> = ({ className = '' }) => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -13,14 +13,22 @@ export const ThemeToggle: React.FC<{ className?: string }> = ({ className = '' }
   }, []);
 
   if (!mounted) {
-    return <div className="w-9 h-9 rounded-lg bg-white/10" />;
+    return <div className="w-9 h-9 rounded-lg bg-slate-200/50 dark:bg-white/10" />;
   }
 
-  const isDark = theme === 'dark';
+  const isDark = resolvedTheme === 'dark' || theme === 'dark';
+
+  const toggleTheme = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const nextTheme = isDark ? 'light' : 'dark';
+    setTheme(nextTheme);
+  };
 
   return (
     <button
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      type="button"
+      onClick={toggleTheme}
       className={`p-2 rounded-lg transition-all duration-200 flex items-center justify-center border ${
         isDark
           ? 'bg-white/10 text-[#F2B84B] border-white/15 hover:bg-white/20'

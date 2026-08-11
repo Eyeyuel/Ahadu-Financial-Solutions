@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { BookingModal } from '@/components/shared/BookingModal';
-import { FrameworkSection } from '@/components/home/FrameworkSection';
 import { BookOpen, BarChart3, Users, Scale, Coins, Calendar, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function ServicesPage() {
@@ -86,7 +85,7 @@ export default function ServicesPage() {
         'Tax planning support & advisory guidance',
       ],
       benefits: [
-        'Better tax record organization',
+        'Better tax organization',
         'Reduced compliance risk and filing errors',
         'Timely preparation for regulatory documentation',
         'Improved tax-efficient business planning',
@@ -112,21 +111,21 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#111827] flex flex-col font-sans">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#071228] text-[#111827] dark:text-slate-100 flex flex-col font-sans transition-colors duration-300">
       <Header onOpenBooking={() => setBookingModalOpen(true)} />
 
       <main className="flex-grow pt-32 pb-20">
         {/* Page Banner */}
-        <section className="bg-[#0B1B3A] text-white py-16 border-b border-[#F2B84B]/20">
+        <section className="bg-slate-100 dark:bg-[#071228] text-[#0B1B3A] dark:text-white py-16 border-b border-slate-200 dark:border-[#F2B84B]/20 transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#F2B84B]/30 text-xs font-semibold text-[#F2B84B]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-[#F2B84B]/30 text-xs font-semibold text-[#D99C2E] dark:text-[#F2B84B]">
                 <span>Confirmed Service Offering</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#0B1B3A] dark:text-white">
                 Our Core Services
               </h1>
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+              <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
                 Practical, reliable, and value-driven financial solutions tailored to empower entrepreneurs, SMEs, and growing organizations across Ethiopia.
               </p>
             </div>
@@ -135,31 +134,31 @@ export default function ServicesPage() {
 
         {/* Detailed Service Cards List */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          {detailedServices.map((service, index) => {
+          {detailedServices.map((service) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.id}
                 id={service.id}
-                className="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-xl scroll-mt-36"
+                className="bg-white dark:bg-[#0B1B3A] rounded-3xl border border-slate-200 dark:border-white/10 p-8 sm:p-12 shadow-xl scroll-mt-36 transition-colors duration-300"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   <div className="lg:col-span-5 space-y-5">
                     <div className="flex items-center gap-3">
-                      <div className="p-3.5 rounded-2xl bg-[#0B1B3A] text-[#1FA971]">
+                      <div className="p-3.5 rounded-2xl bg-[#0B1B3A] dark:bg-white/10 text-[#1FA971] dark:text-[#34D399]">
                         <Icon className="w-7 h-7" />
                       </div>
                       <div>
-                        <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1B3A]">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1B3A] dark:text-white">
                           {service.title}
                         </h2>
-                        <div className="text-xs font-semibold text-[#F2B84B] uppercase tracking-wider">
+                        <div className="text-xs font-semibold text-[#D99C2E] dark:text-[#F2B84B] uppercase tracking-wider">
                           {service.subtitle}
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                       {service.intro}
                     </p>
 
@@ -175,11 +174,11 @@ export default function ServicesPage() {
 
                   <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Scope */}
-                    <div className="p-6 bg-slate-50 rounded-2xl border border-slate-200/80 space-y-3">
-                      <h3 className="text-xs font-bold uppercase tracking-wider text-[#0B1B3A]">
+                    <div className="p-6 bg-slate-50 dark:bg-white/5 rounded-2xl border border-slate-200 dark:border-white/10 space-y-3">
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-[#0B1B3A] dark:text-white">
                         Scope & Deliverables
                       </h3>
-                      <ul className="space-y-2 text-xs text-slate-600">
+                      <ul className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
                         {service.scope.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#1FA971] shrink-0 mt-1" />
@@ -190,11 +189,11 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Benefits */}
-                    <div className="p-6 bg-[#071228] text-white rounded-2xl border border-[#F2B84B]/20 space-y-3">
-                      <h3 className="text-xs font-bold uppercase tracking-wider text-[#F2B84B]">
+                    <div className="p-6 bg-slate-100 dark:bg-[#071228] text-[#111827] dark:text-white rounded-2xl border border-slate-200 dark:border-[#F2B84B]/20 space-y-3">
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-[#168256] dark:text-[#F2B84B]">
                         Client Benefits
                       </h3>
-                      <ul className="space-y-2 text-xs text-slate-300">
+                      <ul className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
                         {service.benefits.map((benefit, idx) => (
                           <li key={idx} className="flex items-start gap-2">
                             <CheckCircle2 className="w-3.5 h-3.5 text-[#1FA971] shrink-0 mt-0.5" />

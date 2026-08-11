@@ -70,14 +70,14 @@ export const SectorExpertiseSection: React.FC = () => {
   ];
 
   return (
-    <section id="sectors" className="py-20 md:py-28 bg-[#0B1B3A] text-white relative overflow-hidden">
+    <section id="sectors" className="py-20 md:py-28 bg-[#F8FAFC] dark:bg-[#0B1B3A] text-[#111827] dark:text-white relative overflow-hidden transition-colors duration-300 border-b border-slate-200 dark:border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3A] dark:text-white">
             Sector Expertise
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
             Adaptable financial management frameworks tailored to the unique regulatory, accounting, and cash flow dynamics of businesses across Ethiopia.
           </p>
         </div>
@@ -95,11 +95,11 @@ export const SectorExpertiseSection: React.FC = () => {
                 className={`p-4 rounded-2xl text-center transition-all duration-300 border flex flex-col items-center justify-between min-h-[140px] ${
                   isSelected
                     ? 'bg-[#1FA971] text-white border-[#F2B84B] shadow-xl scale-105'
-                    : 'bg-[#071228] text-slate-300 border-white/10 hover:border-[#1FA971] hover:text-white'
+                    : 'bg-white dark:bg-[#071228] text-slate-700 dark:text-slate-300 border-slate-200 dark:border-white/10 hover:border-[#1FA971] hover:text-[#1FA971]'
                 }`}
               >
                 <div className={`p-3 rounded-xl mb-2 ${
-                  isSelected ? 'bg-white/20 text-white' : 'bg-white/5 text-[#F2B84B]'
+                  isSelected ? 'bg-white/20 text-white' : 'bg-slate-100 dark:bg-white/5 text-[#F2B84B]'
                 }`}>
                   <Icon className="w-6 h-6" />
                 </div>
@@ -112,11 +112,11 @@ export const SectorExpertiseSection: React.FC = () => {
         </div>
 
         {/* Selected Sector Focus Spotlight */}
-        <div className="mt-8 p-6 rounded-2xl bg-white/5 border border-white/10 max-w-3xl mx-auto text-center space-y-2">
+        <div className="mt-8 p-6 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm max-w-3xl mx-auto text-center space-y-2">
           <div className="text-xs font-semibold uppercase tracking-wider text-[#F2B84B]">
             Advisory Focus: {sectors[selectedSector].title}
           </div>
-          <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-medium">
             {sectors[selectedSector].focus}
           </p>
         </div>

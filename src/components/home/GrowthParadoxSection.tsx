@@ -76,19 +76,19 @@ export const GrowthParadoxSection: React.FC = () => {
                   onClick={() => setSelectedParadox(index)}
                   className={`p-5 rounded-2xl text-left transition-all duration-300 border ${
                     isSelected
-                      ? 'bg-[#0B1B3A] text-white border-[#F2B84B] shadow-xl scale-[1.02]'
+                      ? 'bg-[#1FA971] dark:bg-[#0B1B3A] text-white border-[#1FA971] dark:border-[#F2B84B] shadow-xl scale-[1.02]'
                       : 'bg-white dark:bg-[#0B1B3A]/80 text-[#111827] dark:text-slate-100 border-slate-200 dark:border-white/10 hover:border-[#1FA971] hover:shadow-md'
                   }`}
                 >
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
-                    isSelected ? 'bg-[#1FA971] text-white' : 'bg-slate-100 dark:bg-white/10 text-[#0B1B3A] dark:text-[#F2B84B]'
+                    isSelected ? 'bg-white/20 dark:bg-[#1FA971] text-white' : 'bg-slate-100 dark:bg-white/10 text-[#0B1B3A] dark:text-[#F2B84B]'
                   }`}>
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className={`font-bold text-base mb-1 ${isSelected ? 'text-white' : 'text-[#0B1B3A] dark:text-white'}`}>
                     {item.title}
                   </h3>
-                  <p className={`text-xs leading-relaxed line-clamp-2 ${isSelected ? 'text-slate-300' : 'text-slate-600 dark:text-slate-400'}`}>
+                  <p className={`text-xs leading-relaxed line-clamp-2 ${isSelected ? 'text-emerald-50 dark:text-slate-300' : 'text-slate-600 dark:text-slate-400'}`}>
                     {item.shortDesc}
                   </p>
                 </button>
@@ -97,40 +97,40 @@ export const GrowthParadoxSection: React.FC = () => {
           </div>
 
           {/* Right Detail & Solution Panel */}
-          <div className="lg:col-span-6 bg-[#071228] dark:bg-[#0B1B3A] text-white p-8 rounded-2xl border border-[#F2B84B]/30 shadow-2xl relative">
-            <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
-              <span className="text-xs font-semibold uppercase tracking-wider text-[#F2B84B]">
+          <div className="lg:col-span-6 bg-white dark:bg-[#0B1B3A] text-[#111827] dark:text-white p-8 rounded-2xl border border-slate-200 dark:border-[#F2B84B]/30 shadow-xl dark:shadow-2xl relative transition-colors duration-300">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-white/10 mb-6">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#D99C2E] dark:text-[#F2B84B]">
                 Diagnosis & Solution #{selectedParadox + 1}
               </span>
-              <span className="text-xs text-slate-300 font-mono">
+              <span className="text-xs text-slate-500 dark:text-slate-300 font-mono">
                 AHADU ARCHITECTURE
               </span>
             </div>
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-2">
+                <h3 className="text-2xl font-bold text-[#0B1B3A] dark:text-white mb-2">
                   {paradoxes[selectedParadox].title}
                 </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">
+                <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                   {paradoxes[selectedParadox].fullDesc}
                 </p>
               </div>
 
               {/* Solution Banner */}
-              <div className="p-5 rounded-xl bg-[#1FA971]/15 border border-[#1FA971]/40 space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#34D399]">
+              <div className="p-5 rounded-xl bg-emerald-50 dark:bg-[#1FA971]/15 border border-[#1FA971]/40 space-y-2">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#168256] dark:text-[#34D399]">
                   <ArrowRight className="w-4 h-4" />
                   <span>The Ahadu Solution</span>
                 </div>
-                <p className="text-sm text-white font-medium">
+                <p className="text-sm text-[#0B1B3A] dark:text-white font-medium">
                   {paradoxes[selectedParadox].solution}
                 </p>
               </div>
 
-              <div className="pt-2 flex items-center justify-between text-xs text-slate-300 border-t border-white/10">
+              <div className="pt-2 flex items-center justify-between text-xs text-slate-500 dark:text-slate-300 border-t border-slate-200 dark:border-white/10">
                 <span>Transform operational chaos into strategic advantage</span>
-                <a href="#framework" className="text-[#F2B84B] font-semibold hover:underline">
+                <a href="#framework" className="text-[#D99C2E] dark:text-[#F2B84B] font-semibold hover:underline">
                   View Framework →
                 </a>
               </div>

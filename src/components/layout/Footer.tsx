@@ -9,21 +9,21 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
   return (
-    <footer className="bg-[#071228] text-slate-300 border-t border-[#F2B84B]/20 pt-16 pb-12 relative overflow-hidden">
+    <footer className="bg-slate-100 dark:bg-[#071228] text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-[#F2B84B]/20 pt-16 pb-12 relative overflow-hidden transition-colors duration-300">
       {/* Decorative Grid Line Accents */}
-      <div className="absolute inset-0 bg-grid-pattern-dark opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-pattern dark:bg-grid-pattern-dark opacity-30 pointer-events-none" />
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#1FA971]/10 blur-3xl rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-14 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-14 border-b border-slate-200 dark:border-white/10">
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <AhaduLogo variant="white" size="lg" />
-            <p className="text-sm text-slate-400 max-w-md leading-relaxed mt-4">
-              Ahadu Financial Solutions is an Ethiopia-based professional accounting, financial management, and business advisory firm. Built on the Amharic principle of <strong className="text-white">“Ahadu” (አሐዱ — Unity)</strong>, we partner with growing enterprises to build sound financial architecture for sustainable growth.
+            <AhaduLogo variant="auto" size="lg" />
+            <p className="text-sm text-slate-600 dark:text-slate-300 max-w-md leading-relaxed mt-4">
+              Ahadu Financial Solutions is an Ethiopia-based professional accounting, financial management, and business advisory firm. Built on the Amharic principle of <strong className="text-[#0B1B3A] dark:text-white">“Ahadu” (አሐዱ — Unity)</strong>, we partner with growing enterprises to build sound financial architecture for sustainable growth.
             </p>
             <div className="flex items-center gap-3 pt-2">
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-[#34D399]">
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs text-[#168256] dark:text-[#34D399]">
                 <Shield className="w-3.5 h-3.5 text-[#F2B84B]" />
                 <span>Strict Confidentiality & Ethics</span>
               </div>
@@ -32,9 +32,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
           {/* Col 2: Core Services */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#F2B84B] mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#0B1B3A] dark:text-[#F2B84B] mb-4">
               Core Services
-            </h4>
+            </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/services#bookkeeping" className="hover:text-[#1FA971] transition-colors">
@@ -66,9 +66,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
           {/* Col 3: Quick Navigation */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#F2B84B] mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#0B1B3A] dark:text-[#F2B84B] mb-4">
               Organization
-            </h4>
+            </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/about" className="hover:text-[#1FA971] transition-colors">
@@ -100,9 +100,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
           {/* Col 4: Official Contact Info */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#F2B84B] mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#0B1B3A] dark:text-[#F2B84B] mb-4">
               Contact & Location
-            </h4>
+            </h3>
             <ul className="space-y-3 text-xs">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#1FA971] shrink-0 mt-0.5" />
@@ -110,19 +110,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#1FA971] shrink-0" />
-                <a href="mailto:ahadufinancial@gmail.com" className="hover:text-white transition-colors">
+                <a href="mailto:ahadufinancial@gmail.com" className="hover:text-[#0B1B3A] dark:hover:text-white transition-colors">
                   ahadufinancial@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#1FA971] shrink-0" />
-                <a href="tel:+251901049961" className="hover:text-white transition-colors">
+                <a href="tel:+251901049961" className="hover:text-[#0B1B3A] dark:hover:text-white transition-colors">
                   +251 901 049 961
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Globe className="w-4 h-4 text-[#1FA971] shrink-0" />
-                <a href="https://www.ahadufinancial.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+                <a href="https://www.ahadufinancial.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#0B1B3A] dark:hover:text-white transition-colors flex items-center gap-1">
                   <span>www.ahadufinancial.com</span>
                   <ArrowUpRight className="w-3 h-3 text-[#F2B84B]" />
                 </a>
@@ -132,16 +132,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         </div>
 
         {/* Footer Bottom Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
           <div>
-            © {new Date().getFullYear()} Ahadu Financial Solutions. All rights reserved. Founded by <span className="text-white font-medium">Arsema Habtamu</span>.
+            © {new Date().getFullYear()} Ahadu Financial Solutions. All rights reserved. Founded by <span className="text-[#0B1B3A] dark:text-white font-medium">Arsema Habtamu</span>.
           </div>
           <div className="flex items-center gap-6">
-            <span className="hover:text-white transition-colors">Privacy Policy & Confidentiality</span>
+            <span className="hover:text-[#0B1B3A] dark:hover:text-white transition-colors">Privacy Policy & Confidentiality</span>
             <span>•</span>
-            <span className="hover:text-white transition-colors">Terms of Engagement</span>
+            <span className="hover:text-[#0B1B3A] dark:hover:text-white transition-colors">Terms of Engagement</span>
             <span>•</span>
-            <span className="text-[#34D399]">Addis Ababa, Ethiopia</span>
+            <span className="text-[#168256] dark:text-[#34D399] font-medium">Addis Ababa, Ethiopia</span>
           </div>
         </div>
       </div>

@@ -100,14 +100,17 @@ export const FrameworkSection: React.FC = () => {
   ];
 
   return (
-    <section id="framework" className="py-20 md:py-28 bg-[#0B1B3A] text-white relative overflow-hidden">
+    <section id="framework" className="py-20 md:py-28 bg-[#F8FAFC] dark:bg-[#0B1B3A] text-[#111827] dark:text-white relative overflow-hidden transition-colors duration-300 border-b border-slate-200 dark:border-white/10">
+      {/* Background Accent */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3A] dark:text-white">
             The Ahadu Framework
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
             Comprehensive financial clarity from a single, trusted partner. An integrated suite of solutions designed to turn operational chaos into strategic growth.
           </p>
         </div>
@@ -122,10 +125,10 @@ export const FrameworkSection: React.FC = () => {
               <button
                 key={item.id}
                 onClick={() => setActiveTab(idx)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all border ${
                   isActive
-                    ? 'bg-[#1FA971] text-white shadow-lg shadow-[#1FA971]/30 scale-105'
-                    : 'bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10'
+                    ? 'bg-[#1FA971] text-white border-[#1FA971] shadow-lg shadow-[#1FA971]/30 scale-105'
+                    : 'bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-white/10 hover:border-[#1FA971]'
                 }`}
               >
                 <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#F2B84B]'}`} />
@@ -136,30 +139,30 @@ export const FrameworkSection: React.FC = () => {
         </div>
 
         {/* Selected Service Detailed View */}
-        <div className="bg-[#071228] border border-[#F2B84B]/30 rounded-2xl p-6 sm:p-10 shadow-2xl">
+        <div className="bg-white dark:bg-[#071228] border border-slate-200 dark:border-[#F2B84B]/30 rounded-2xl p-6 sm:p-10 shadow-2xl transition-colors duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left: Info & Key Benefit */}
             <div className="lg:col-span-5 space-y-6">
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-xl bg-[#1FA971]/20 border border-[#1FA971]/40 text-[#34D399]">
+                <div className="p-3 rounded-xl bg-[#1FA971]/15 border border-[#1FA971]/30 text-[#1FA971] dark:text-[#34D399]">
                   {React.createElement(services[activeTab].icon, { className: 'w-7 h-7' })}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">{services[activeTab].title}</h3>
-                  <p className="text-xs text-[#F2B84B] font-medium">{services[activeTab].subtitle}</p>
+                  <h3 className="text-2xl font-bold text-[#0B1B3A] dark:text-white">{services[activeTab].title}</h3>
+                  <p className="text-xs text-[#F2B84B] font-semibold">{services[activeTab].subtitle}</p>
                 </div>
               </div>
 
-              <p className="text-sm text-slate-300 italic border-l-2 border-[#F2B84B] pl-3 py-1">
+              <p className="text-sm text-slate-600 dark:text-slate-300 italic border-l-2 border-[#F2B84B] pl-3 py-1">
                 “{services[activeTab].tagline}”
               </p>
 
               {/* Key Benefit Highlight Box */}
-              <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#34D399]">
+              <div className="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 space-y-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#1FA971] dark:text-[#34D399]">
                   Primary Client Benefit
                 </div>
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
                   {services[activeTab].benefit}
                 </p>
               </div>
@@ -167,17 +170,17 @@ export const FrameworkSection: React.FC = () => {
 
             {/* Right: Deliverables Checklist */}
             <div className="lg:col-span-7 space-y-4">
-              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-300">
+              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-600 dark:text-slate-300">
                 Core Deliverables & Scope
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {services[activeTab].deliverables.map((item, dIdx) => (
                   <div
                     key={dIdx}
-                    className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#1FA971]/50 transition-colors flex items-start gap-3"
+                    className="p-3.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-[#1FA971]/50 transition-colors flex items-start gap-3"
                   >
                     <CheckCircle2 className="w-4 h-4 text-[#1FA971] shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm text-slate-200 leading-normal">{item}</span>
+                    <span className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-normal">{item}</span>
                   </div>
                 ))}
               </div>

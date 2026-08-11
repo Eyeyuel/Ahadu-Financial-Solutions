@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { BookingModal } from '@/components/shared/BookingModal';
-import { BookOpen, Calendar, Clock, ArrowRight, ShieldAlert, TrendingUp } from 'lucide-react';
+import { Clock, ArrowRight, TrendingUp } from 'lucide-react';
 
 export default function InsightsPage() {
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
@@ -37,22 +37,22 @@ export default function InsightsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#111827] flex flex-col font-sans">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#071228] text-[#111827] dark:text-slate-100 flex flex-col font-sans transition-colors duration-300">
       <Header onOpenBooking={() => setBookingModalOpen(true)} />
 
       <main className="flex-grow pt-32 pb-20">
         {/* Page Banner */}
-        <section className="bg-[#0B1B3A] text-white py-16 border-b border-[#F2B84B]/20">
+        <section className="bg-slate-100 dark:bg-[#071228] text-[#0B1B3A] dark:text-white py-16 border-b border-slate-200 dark:border-[#F2B84B]/20 transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#F2B84B]/30 text-xs font-semibold text-[#F2B84B]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-[#F2B84B]/30 text-xs font-semibold text-[#D99C2E] dark:text-[#F2B84B]">
                 <TrendingUp className="w-3.5 h-3.5" />
                 <span>Thought Leadership & Knowledge</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#0B1B3A] dark:text-white">
                 Insights & Financial Advisory
               </h1>
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+              <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
                 Practical guides, financial management strategy, and compliance insights for business leaders and entrepreneurs across Ethiopia.
               </p>
             </div>
@@ -65,11 +65,11 @@ export default function InsightsPage() {
             {articles.map((art) => (
               <div
                 key={art.id}
-                className="bg-white rounded-2xl border border-slate-200 p-6 shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
+                className="bg-white dark:bg-[#0B1B3A] rounded-2xl border border-slate-200 dark:border-white/10 p-6 shadow-md hover:shadow-xl transition-all flex flex-col justify-between"
               >
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between text-xs text-slate-400">
-                    <span className="px-2.5 py-1 rounded-full bg-[#1FA971]/15 text-[#168256] font-semibold">
+                  <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                    <span className="px-2.5 py-1 rounded-full bg-[#1FA971]/15 text-[#168256] dark:text-[#34D399] font-semibold">
                       {art.category}
                     </span>
                     <span className="flex items-center gap-1">
@@ -78,16 +78,16 @@ export default function InsightsPage() {
                     </span>
                   </div>
 
-                  <h2 className="text-lg font-bold text-[#0B1B3A] leading-snug">
+                  <h2 className="text-lg font-bold text-[#0B1B3A] dark:text-white leading-snug">
                     {art.title}
                   </h2>
 
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                     {art.summary}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-slate-100 flex items-center justify-between text-xs text-[#1FA971] font-semibold mt-6">
+                <div className="pt-6 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-xs text-[#1FA971] dark:text-[#34D399] font-semibold mt-6">
                   <span>Read Article</span>
                   <ArrowRight className="w-4 h-4" />
                 </div>

@@ -83,7 +83,7 @@ export const EngagementJourneySection: React.FC = () => {
                 onClick={() => setActiveStep(idx)}
                 className={`p-3.5 rounded-xl text-left transition-all border relative overflow-hidden ${
                   isActive
-                    ? 'bg-[#0B1B3A] text-white border-[#F2B84B] shadow-lg scale-105 z-10'
+                    ? 'bg-[#1FA971] dark:bg-[#0B1B3A] text-white border-[#1FA971] dark:border-[#F2B84B] shadow-lg scale-105 z-10'
                     : isCompleted
                     ? 'bg-emerald-50 dark:bg-[#1FA971]/20 text-[#0B1B3A] dark:text-emerald-300 border-[#1FA971]/40'
                     : 'bg-white dark:bg-[#0B1B3A]/60 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-white/10 hover:border-slate-300'
@@ -92,14 +92,14 @@ export const EngagementJourneySection: React.FC = () => {
                 <div className="flex items-center justify-between mb-2">
                   <span className={`w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center ${
                     isActive
-                      ? 'bg-[#F2B84B] text-[#0B1B3A]'
+                      ? 'bg-white/20 dark:bg-[#F2B84B] text-white dark:text-[#0B1B3A]'
                       : isCompleted
                       ? 'bg-[#1FA971] text-white'
                       : 'bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300'
                   }`}>
                     {isCompleted ? <Check className="w-3.5 h-3.5" /> : step.num}
                   </span>
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#1FA971]' : 'text-slate-400'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-white dark:text-[#1FA971]' : 'text-slate-400'}`} />
                 </div>
                 <div className={`text-xs font-bold truncate ${isActive ? 'text-white' : 'text-[#0B1B3A] dark:text-white'}`}>
                   {step.title}
@@ -110,36 +110,36 @@ export const EngagementJourneySection: React.FC = () => {
         </div>
 
         {/* Selected Stage Detail Panel */}
-        <div className="bg-[#071228] dark:bg-[#0B1B3A] text-white rounded-2xl p-6 sm:p-10 border border-[#F2B84B]/30 shadow-2xl relative">
+        <div className="bg-white dark:bg-[#0B1B3A] text-[#111827] dark:text-white rounded-2xl p-6 sm:p-10 border border-slate-200 dark:border-[#F2B84B]/30 shadow-xl dark:shadow-2xl relative transition-colors duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Stage Details */}
             <div className="lg:col-span-7 space-y-5">
               <div className="flex items-center gap-3">
-                <span className="px-3 py-1 rounded-full bg-[#1FA971]/20 text-[#34D399] font-mono text-xs font-bold">
+                <span className="px-3 py-1 rounded-full bg-[#1FA971]/20 text-[#168256] dark:text-[#34D399] font-mono text-xs font-bold">
                   STAGE 0{steps[activeStep].num} OF 06
                 </span>
-                <span className="text-xs text-[#F2B84B] font-semibold uppercase tracking-wider">
+                <span className="text-xs text-[#D99C2E] dark:text-[#F2B84B] font-semibold uppercase tracking-wider">
                   {steps[activeStep].subtitle}
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#0B1B3A] dark:text-white">
                 {steps[activeStep].title}
               </h3>
 
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
                 {steps[activeStep].desc}
               </p>
             </div>
 
             {/* Right Stage Deliverable Outputs */}
-            <div className="lg:col-span-5 bg-white/5 border border-white/10 p-6 rounded-xl space-y-4">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-[#F2B84B]">
+            <div className="lg:col-span-5 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-6 rounded-xl space-y-4">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#D99C2E] dark:text-[#F2B84B]">
                 Key Stage Outputs
               </h3>
               <div className="space-y-2.5">
                 {steps[activeStep].outputs.map((out, oIdx) => (
-                  <div key={oIdx} className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
+                  <div key={oIdx} className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#1FA971]" />
                     <span>{out}</span>
                   </div>

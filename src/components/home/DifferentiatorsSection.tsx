@@ -46,7 +46,7 @@ export const DifferentiatorsSection: React.FC = () => {
         </div>
 
         {/* Side-by-Side Comparison Matrix Table */}
-        <div className="bg-white dark:bg-[#0B1B3A] rounded-2xl border border-slate-200 dark:border-white/10 shadow-xl overflow-hidden">
+        <div className="bg-white dark:bg-[#0B1B3A] rounded-2xl border border-slate-200 dark:border-white/10 shadow-xl overflow-hidden transition-colors duration-300">
           <div className="grid grid-cols-1 md:grid-cols-12 border-b border-slate-200 dark:border-white/10 text-sm font-bold">
             <div className="md:col-span-4 p-5 bg-slate-50 dark:bg-[#071228] text-slate-700 dark:text-slate-200 uppercase tracking-wider text-xs flex items-center">
               Dimension
@@ -55,12 +55,12 @@ export const DifferentiatorsSection: React.FC = () => {
               <X className="w-4 h-4 text-rose-500" />
               <span>Standard Accounting</span>
             </div>
-            <div className="md:col-span-4 p-5 bg-[#0B1B3A] dark:bg-[#11254B] text-white uppercase tracking-wider text-xs border-t md:border-t-0 border-slate-200 dark:border-white/10 flex items-center justify-between">
+            <div className="md:col-span-4 p-5 bg-[#1FA971] dark:bg-[#11254B] text-white uppercase tracking-wider text-xs border-t md:border-t-0 border-slate-200 dark:border-white/10 flex items-center justify-between shadow-sm">
               <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#1FA971]" />
-                <span className="text-[#F2B84B]">Ahadu Financial Solutions</span>
+                <Check className="w-4 h-4 text-[#F2B84B]" />
+                <span className="text-white font-bold">Ahadu Financial Solutions</span>
               </div>
-              <ShieldCheck className="w-4 h-4 text-[#1FA971]" />
+              <ShieldCheck className="w-4 h-4 text-[#F2B84B]" />
             </div>
           </div>
 
@@ -79,11 +79,11 @@ export const DifferentiatorsSection: React.FC = () => {
                   <span>{item.standard}</span>
                 </div>
                 {/* Ahadu */}
-                <div className="md:col-span-4 p-5 bg-[#071228] dark:bg-[#0B1B3A] text-white font-semibold flex items-center gap-2 border-t md:border-t-0 border-slate-100 dark:border-white/5">
-                  <span className="w-5 h-5 rounded-full bg-[#1FA971]/20 text-[#34D399] flex items-center justify-center text-xs shrink-0 font-bold">
+                <div className="md:col-span-4 p-5 bg-emerald-50/70 dark:bg-[#071228] text-[#0B1B3A] dark:text-white font-semibold flex items-center gap-2 border-t md:border-t-0 border-slate-100 dark:border-white/5 border-l border-[#1FA971]/30">
+                  <span className="w-5 h-5 rounded-full bg-[#1FA971] text-white flex items-center justify-center text-xs shrink-0 font-bold shadow-sm">
                     ✓
                   </span>
-                  <span className="text-slate-100">{item.ahadu}</span>
+                  <span className="text-[#0B1B3A] dark:text-slate-100">{item.ahadu}</span>
                 </div>
               </div>
             ))}
