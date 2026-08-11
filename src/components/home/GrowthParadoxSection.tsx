@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { EyeOff, Flame, AlertTriangle, Cpu, Compass, ArrowRight, ShieldAlert } from 'lucide-react';
+import { EyeOff, Flame, AlertTriangle, Cpu, Compass, ArrowRight } from 'lucide-react';
 
 export const GrowthParadoxSection: React.FC = () => {
   const [selectedParadox, setSelectedParadox] = useState<number>(0);
@@ -53,15 +53,11 @@ export const GrowthParadoxSection: React.FC = () => {
     <section className="py-20 md:py-28 bg-[#F8FAFC] text-[#111827] relative overflow-hidden border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B1B3A]/5 border border-[#0B1B3A]/10 text-xs font-semibold text-[#0B1B3A] mb-3">
-            <ShieldAlert className="w-3.5 h-3.5 text-[#F2B84B]" />
-            <span>Strategic Diagnosis</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B3A]">
+        <div className="max-w-3xl mb-14 space-y-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3A]">
             The Growth Paradox
           </h2>
-          <p className="mt-3 text-lg text-slate-600 leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
             Expanding businesses often outgrow their financial foundations. Without robust financial architecture, growth introduces complexity, risk, and operational blind spots.
           </p>
         </div>
@@ -92,7 +88,7 @@ export const GrowthParadoxSection: React.FC = () => {
                   <h3 className={`font-bold text-base mb-1 ${isSelected ? 'text-white' : 'text-[#0B1B3A]'}`}>
                     {item.title}
                   </h3>
-                  <p className={`text-xs leading-relaxed line-clamp-2 ${isSelected ? 'text-slate-300' : 'text-slate-500'}`}>
+                  <p className={`text-xs leading-relaxed line-clamp-2 ${isSelected ? 'text-slate-300' : 'text-slate-600'}`}>
                     {item.shortDesc}
                   </p>
                 </button>
@@ -106,7 +102,7 @@ export const GrowthParadoxSection: React.FC = () => {
               <span className="text-xs font-semibold uppercase tracking-wider text-[#F2B84B]">
                 Diagnosis & Solution #{selectedParadox + 1}
               </span>
-              <span className="text-xs text-slate-400 font-mono">
+              <span className="text-xs text-slate-300 font-mono">
                 AHADU ARCHITECTURE
               </span>
             </div>
@@ -132,7 +128,7 @@ export const GrowthParadoxSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="pt-2 flex items-center justify-between text-xs text-slate-400 border-t border-white/10">
+              <div className="pt-2 flex items-center justify-between text-xs text-slate-300 border-t border-white/10">
                 <span>Transform operational chaos into strategic advantage</span>
                 <a href="#framework" className="text-[#F2B84B] font-semibold hover:underline">
                   View Framework →

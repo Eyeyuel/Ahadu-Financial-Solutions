@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { BookOpen, BarChart3, Users, Scale, Coins, Compass, CheckCircle2, ArrowRight } from 'lucide-react';
+import { BookOpen, BarChart3, Users, Scale, Coins, Compass, CheckCircle2 } from 'lucide-react';
 
 export const FrameworkSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -101,16 +101,9 @@ export const FrameworkSection: React.FC = () => {
 
   return (
     <section id="framework" className="py-20 md:py-28 bg-[#0B1B3A] text-white relative overflow-hidden">
-      {/* Background Accent */}
-      <div className="absolute inset-0 bg-grid-pattern-dark opacity-15 pointer-events-none" />
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#1FA971]/10 blur-3xl rounded-full pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#F2B84B]/30 text-xs font-semibold text-[#F2B84B]">
-            <span>The Ahadu Architecture</span>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
             The Ahadu Framework
           </h2>
@@ -174,9 +167,9 @@ export const FrameworkSection: React.FC = () => {
 
             {/* Right: Deliverables Checklist */}
             <div className="lg:col-span-7 space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-300">
                 Core Deliverables & Scope
-              </h4>
+              </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {services[activeTab].deliverables.map((item, dIdx) => (
                   <div

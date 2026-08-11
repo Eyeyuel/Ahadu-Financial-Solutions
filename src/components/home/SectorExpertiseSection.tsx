@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Rocket, Building2, ShoppingBag, HardHat, Factory, Hotel, Stethoscope, Briefcase, Globe2, Ship, Layers } from 'lucide-react';
+import { Rocket, Building2, ShoppingBag, HardHat, Factory, Hotel, Stethoscope, Briefcase, Globe2, Ship } from 'lucide-react';
 
 export const SectorExpertiseSection: React.FC = () => {
   const [selectedSector, setSelectedSector] = useState<number>(0);
@@ -71,16 +71,9 @@ export const SectorExpertiseSection: React.FC = () => {
 
   return (
     <section id="sectors" className="py-20 md:py-28 bg-[#0B1B3A] text-white relative overflow-hidden">
-      {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-grid-pattern-dark opacity-15 pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#F2B84B]/30 text-xs font-semibold text-[#F2B84B]">
-            <Layers className="w-3.5 h-3.5" />
-            <span>Tailored Operational Realities</span>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
             Sector Expertise
           </h2>

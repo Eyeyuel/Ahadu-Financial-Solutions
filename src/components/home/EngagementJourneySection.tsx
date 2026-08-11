@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Search, ClipboardCheck, Layout, Settings, FileSpreadsheet, HeartHandshake, ChevronRight, Check } from 'lucide-react';
+import { Search, ClipboardCheck, Layout, Settings, FileSpreadsheet, HeartHandshake, Check } from 'lucide-react';
 
 export const EngagementJourneySection: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number>(0);
@@ -61,15 +61,11 @@ export const EngagementJourneySection: React.FC = () => {
     <section id="journey" className="py-20 md:py-28 bg-[#F8FAFC] text-[#111827] relative overflow-hidden border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B1B3A]/5 border border-[#0B1B3A]/10 text-xs font-semibold text-[#0B1B3A] mb-3">
-            <ChevronRight className="w-3.5 h-3.5 text-[#1FA971]" />
-            <span>6-Stage Methodology</span>
-          </div>
+        <div className="max-w-3xl mb-16 space-y-3">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3A]">
             The Engagement Journey
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
             A structured, six-stage methodology for seamless integration, financial organization, and ongoing strategic support.
           </p>
         </div>
@@ -90,7 +86,7 @@ export const EngagementJourneySection: React.FC = () => {
                     ? 'bg-[#0B1B3A] text-white border-[#F2B84B] shadow-lg scale-105 z-10'
                     : isCompleted
                     ? 'bg-emerald-50 text-[#0B1B3A] border-[#1FA971]/40'
-                    : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300'
+                    : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
@@ -99,7 +95,7 @@ export const EngagementJourneySection: React.FC = () => {
                       ? 'bg-[#F2B84B] text-[#0B1B3A]'
                       : isCompleted
                       ? 'bg-[#1FA971] text-white'
-                      : 'bg-slate-100 text-slate-500'
+                      : 'bg-slate-100 text-slate-600'
                   }`}>
                     {isCompleted ? <Check className="w-3.5 h-3.5" /> : step.num}
                   </span>
@@ -138,9 +134,9 @@ export const EngagementJourneySection: React.FC = () => {
 
             {/* Right Stage Deliverable Outputs */}
             <div className="lg:col-span-5 bg-white/5 border border-white/10 p-6 rounded-xl space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#F2B84B]">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#F2B84B]">
                 Key Stage Outputs
-              </h4>
+              </h3>
               <div className="space-y-2.5">
                 {steps[activeStep].outputs.map((out, oIdx) => (
                   <div key={oIdx} className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">

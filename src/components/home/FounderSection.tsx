@@ -43,9 +43,9 @@ export const FounderSection: React.FC = () => {
             </div>
 
             <div className="lg:col-span-4 bg-white/5 border border-white/10 p-6 rounded-2xl space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#F2B84B]">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#F2B84B]">
                 Our Direction
-              </h4>
+              </h3>
               <div className="space-y-3">
                 <div>
                   <div className="text-xs font-bold text-white uppercase tracking-wider">Vision</div>
@@ -67,7 +67,7 @@ export const FounderSection: React.FC = () => {
         {/* 8 Core Values Grid */}
         <div className="space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white">Our Core Non-Negotiables</h3>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Our Core Non-Negotiables</h2>
             <p className="text-sm text-slate-300">
               The ethical framework governing every engagement at Ahadu Financial Solutions.
             </p>
@@ -81,7 +81,7 @@ export const FounderSection: React.FC = () => {
                   <div className="w-10 h-10 rounded-xl bg-[#1FA971]/20 text-[#34D399] flex items-center justify-center">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h4 className="text-base font-bold text-white">{v.title}</h4>
+                  <h3 className="text-base font-bold text-white">{v.title}</h3>
                   <p className="text-xs text-slate-300 leading-relaxed">{v.desc}</p>
                 </div>
               );
