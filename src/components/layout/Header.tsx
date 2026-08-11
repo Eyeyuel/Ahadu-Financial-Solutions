@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { AhaduLogo } from '../shared/AhaduLogo';
+import { ThemeToggle } from '../shared/ThemeToggle';
 import { Menu, X, ArrowRight, Calendar, Phone, ChevronDown } from 'lucide-react';
 
 interface HeaderProps {
@@ -34,8 +35,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0B1B3A]/95 backdrop-blur-md py-3 shadow-xl border-b border-[#F2B84B]/20'
-          : 'bg-[#0B1B3A] py-5 border-b border-white/10'
+          ? 'bg-[#0B1B3A]/95 dark:bg-[#071228]/95 backdrop-blur-md py-3 shadow-xl border-b border-[#F2B84B]/20'
+          : 'bg-[#0B1B3A] dark:bg-[#071228] py-5 border-b border-white/10'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,7 +100,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             </Link>
           </nav>
 
-          {/* Right Action CTA */}
+          {/* Right Action CTA & Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
             {/* Amharic Badge */}
             <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-[#1FA971]/15 border border-[#1FA971]/30 text-[#34D399] text-xs font-medium">
@@ -107,6 +108,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               <span className="text-slate-400">|</span>
               <span>Unity</span>
             </div>
+
+            {/* Theme Toggle Button */}
+            <ThemeToggle />
 
             <button
               onClick={onOpenBooking}
@@ -117,14 +121,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-3">
+          {/* Mobile Actions */}
+          <div className="flex md:hidden items-center gap-2.5">
+            <ThemeToggle />
+
             <button
               onClick={onOpenBooking}
               className="p-2 rounded-lg bg-[#1FA971] text-white text-xs font-semibold"
             >
               Book
             </button>
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg bg-white/10 text-white hover:bg-white/20 transition-colors"
@@ -145,6 +152,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               <span className="text-slate-500">•</span>
               <span>Financial Clarity for Ethiopian Business</span>
             </div>
+            <ThemeToggle />
           </div>
 
           <nav className="flex flex-col gap-4">

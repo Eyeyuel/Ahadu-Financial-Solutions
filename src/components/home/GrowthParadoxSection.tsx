@@ -50,14 +50,14 @@ export const GrowthParadoxSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-[#F8FAFC] text-[#111827] relative overflow-hidden border-y border-slate-200">
+    <section className="py-20 md:py-28 bg-[#F8FAFC] dark:bg-[#071228] text-[#111827] dark:text-slate-100 relative overflow-hidden border-y border-slate-200 dark:border-white/10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-14 space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3A]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3A] dark:text-white">
             The Growth Paradox
           </h2>
-          <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
             Expanding businesses often outgrow their financial foundations. Without robust financial architecture, growth introduces complexity, risk, and operational blind spots.
           </p>
         </div>
@@ -77,18 +77,18 @@ export const GrowthParadoxSection: React.FC = () => {
                   className={`p-5 rounded-2xl text-left transition-all duration-300 border ${
                     isSelected
                       ? 'bg-[#0B1B3A] text-white border-[#F2B84B] shadow-xl scale-[1.02]'
-                      : 'bg-white text-[#111827] border-slate-200 hover:border-[#1FA971] hover:shadow-md'
+                      : 'bg-white dark:bg-[#0B1B3A]/80 text-[#111827] dark:text-slate-100 border-slate-200 dark:border-white/10 hover:border-[#1FA971] hover:shadow-md'
                   }`}
                 >
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
-                    isSelected ? 'bg-[#1FA971] text-white' : 'bg-slate-100 text-[#0B1B3A]'
+                    isSelected ? 'bg-[#1FA971] text-white' : 'bg-slate-100 dark:bg-white/10 text-[#0B1B3A] dark:text-[#F2B84B]'
                   }`}>
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className={`font-bold text-base mb-1 ${isSelected ? 'text-white' : 'text-[#0B1B3A]'}`}>
+                  <h3 className={`font-bold text-base mb-1 ${isSelected ? 'text-white' : 'text-[#0B1B3A] dark:text-white'}`}>
                     {item.title}
                   </h3>
-                  <p className={`text-xs leading-relaxed line-clamp-2 ${isSelected ? 'text-slate-300' : 'text-slate-600'}`}>
+                  <p className={`text-xs leading-relaxed line-clamp-2 ${isSelected ? 'text-slate-300' : 'text-slate-600 dark:text-slate-400'}`}>
                     {item.shortDesc}
                   </p>
                 </button>
@@ -97,7 +97,7 @@ export const GrowthParadoxSection: React.FC = () => {
           </div>
 
           {/* Right Detail & Solution Panel */}
-          <div className="lg:col-span-6 bg-[#071228] text-white p-8 rounded-2xl border border-[#F2B84B]/30 shadow-2xl relative">
+          <div className="lg:col-span-6 bg-[#071228] dark:bg-[#0B1B3A] text-white p-8 rounded-2xl border border-[#F2B84B]/30 shadow-2xl relative">
             <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
               <span className="text-xs font-semibold uppercase tracking-wider text-[#F2B84B]">
                 Diagnosis & Solution #{selectedParadox + 1}

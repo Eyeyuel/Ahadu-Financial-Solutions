@@ -10,13 +10,20 @@
   --gold-primary: #F2B84B;
   --gold-dark: #D99C2E;
   --gold-light: #FEF7E8;
-  --bg-light: #F8FAFC;
-  --text-dark: #111827;
-  --text-muted: #4B5563;
-  --border-light: #E2E8F0;
 
-  --background: #F8FAFC;
-  --foreground: #111827;
+  --bg-main: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --text-main: #111827;
+  --text-sub: #475569;
+  --border-subtle: #E2E8F0;
+}
+
+.dark {
+  --bg-main: #071228;
+  --bg-card: #0B1B3A;
+  --text-main: #F8FAFC;
+  --text-sub: #94A3B8;
+  --border-subtle: rgba(242, 184, 75, 0.2);
 }
 
 @theme inline {
@@ -29,10 +36,6 @@
   --color-gold: #F2B84B;
   --color-gold-dark: #D99C2E;
   --color-gold-light: #FEF7E8;
-  --color-bg-light: #F8FAFC;
-  --color-text-dark: #111827;
-  --color-text-muted: #4B5563;
-  --color-border-light: #E2E8F0;
 }
 
 html {
@@ -40,14 +43,14 @@ html {
 }
 
 body {
-  background-color: var(--bg-light);
-  color: var(--text-dark);
-  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom Editorial Custom Scrollbar */
+/* Custom Editorial Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -73,6 +76,13 @@ body {
     linear-gradient(to bottom, rgba(11, 27, 58, 0.05) 1px, transparent 1px);
 }
 
+.dark .bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
 .bg-grid-pattern-dark {
   background-size: 32px 32px;
   background-image: 
@@ -80,16 +90,11 @@ body {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
-/* Metallic Gold Accent Glow */
+/* Metallic Accents */
 .gold-glow {
   box-shadow: 0 0 20px rgba(242, 184, 75, 0.25);
 }
 
 .emerald-glow {
   box-shadow: 0 0 20px rgba(31, 169, 113, 0.25);
-}
-
-.navy-card {
-  background: linear-gradient(145deg, #0B1B3A 0%, #071228 100%);
-  border: 1px solid rgba(242, 184, 75, 0.15);
 }

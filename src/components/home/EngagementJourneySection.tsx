@@ -58,14 +58,14 @@ export const EngagementJourneySection: React.FC = () => {
   ];
 
   return (
-    <section id="journey" className="py-20 md:py-28 bg-[#F8FAFC] text-[#111827] relative overflow-hidden border-b border-slate-200">
+    <section id="journey" className="py-20 md:py-28 bg-[#F8FAFC] dark:bg-[#071228] text-[#111827] dark:text-slate-100 relative overflow-hidden border-b border-slate-200 dark:border-white/10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-16 space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3A]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1B3A] dark:text-white">
             The Engagement Journey
           </h2>
-          <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
             A structured, six-stage methodology for seamless integration, financial organization, and ongoing strategic support.
           </p>
         </div>
@@ -85,8 +85,8 @@ export const EngagementJourneySection: React.FC = () => {
                   isActive
                     ? 'bg-[#0B1B3A] text-white border-[#F2B84B] shadow-lg scale-105 z-10'
                     : isCompleted
-                    ? 'bg-emerald-50 text-[#0B1B3A] border-[#1FA971]/40'
-                    : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
+                    ? 'bg-emerald-50 dark:bg-[#1FA971]/20 text-[#0B1B3A] dark:text-emerald-300 border-[#1FA971]/40'
+                    : 'bg-white dark:bg-[#0B1B3A]/60 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-white/10 hover:border-slate-300'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
@@ -95,13 +95,13 @@ export const EngagementJourneySection: React.FC = () => {
                       ? 'bg-[#F2B84B] text-[#0B1B3A]'
                       : isCompleted
                       ? 'bg-[#1FA971] text-white'
-                      : 'bg-slate-100 text-slate-600'
+                      : 'bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300'
                   }`}>
                     {isCompleted ? <Check className="w-3.5 h-3.5" /> : step.num}
                   </span>
                   <Icon className={`w-4 h-4 ${isActive ? 'text-[#1FA971]' : 'text-slate-400'}`} />
                 </div>
-                <div className={`text-xs font-bold truncate ${isActive ? 'text-white' : 'text-[#0B1B3A]'}`}>
+                <div className={`text-xs font-bold truncate ${isActive ? 'text-white' : 'text-[#0B1B3A] dark:text-white'}`}>
                   {step.title}
                 </div>
               </button>
@@ -110,7 +110,7 @@ export const EngagementJourneySection: React.FC = () => {
         </div>
 
         {/* Selected Stage Detail Panel */}
-        <div className="bg-[#071228] text-white rounded-2xl p-6 sm:p-10 border border-[#F2B84B]/30 shadow-2xl relative">
+        <div className="bg-[#071228] dark:bg-[#0B1B3A] text-white rounded-2xl p-6 sm:p-10 border border-[#F2B84B]/30 shadow-2xl relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Stage Details */}
             <div className="lg:col-span-7 space-y-5">
