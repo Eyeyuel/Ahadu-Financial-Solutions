@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --navy-primary: #0B1B3A;
+  --navy-dark: #071228;
+  --navy-surface: #11254B;
+  --emerald-primary: #1FA971;
+  --emerald-dark: #168256;
+  --emerald-light: #E8F6F0;
+  --gold-primary: #F2B84B;
+  --gold-dark: #D99C2E;
+  --gold-light: #FEF7E8;
+  --bg-light: #F8FAFC;
+  --text-dark: #111827;
+  --text-muted: #4B5563;
+  --border-light: #E2E8F0;
+
+  --background: #F8FAFC;
+  --foreground: #111827;
+}
+
+@theme inline {
+  --color-navy: #0B1B3A;
+  --color-navy-dark: #071228;
+  --color-navy-surface: #11254B;
+  --color-emerald: #1FA971;
+  --color-emerald-dark: #168256;
+  --color-emerald-light: #E8F6F0;
+  --color-gold: #F2B84B;
+  --color-gold-dark: #D99C2E;
+  --color-gold-light: #FEF7E8;
+  --color-bg-light: #F8FAFC;
+  --color-text-dark: #111827;
+  --color-text-muted: #4B5563;
+  --color-border-light: #E2E8F0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Editorial Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1B3A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1FA971;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F2B84B;
+}
+
+/* Custom Grid Background Pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(11, 27, 58, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 27, 58, 0.05) 1px, transparent 1px);
+}
+
+.bg-grid-pattern-dark {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Metallic Gold Accent Glow */
+.gold-glow {
+  box-shadow: 0 0 20px rgba(242, 184, 75, 0.25);
+}
+
+.emerald-glow {
+  box-shadow: 0 0 20px rgba(31, 169, 113, 0.25);
+}
+
+.navy-card {
+  background: linear-gradient(145deg, #0B1B3A 0%, #071228 100%);
+  border: 1px solid rgba(242, 184, 75, 0.15);
+}
