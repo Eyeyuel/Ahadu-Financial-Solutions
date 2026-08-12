@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Calendar, CheckCircle2, Send, Shield, Sparkles, Loader2 } from 'lucide-react';
+import { X, Calendar, CheckCircle2, Send, Shield, Sparkles, Loader2, AlertCircle } from 'lucide-react';
 import { AhaduLogo } from './AhaduLogo';
 
 interface BookingModalProps {
@@ -40,15 +40,15 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
         body: JSON.stringify(formData),
       });
 
-      if (res.ok) {
+      const data = await res.json();
+
+      if (res.ok && data.status === 'success') {
         setSubmitted(true);
       } else {
-        setErrorMessage('Form received! Our team will contact you directly.');
-        setSubmitted(true);
+        setErrorMessage(data.message || 'Submission failed. Please check your connection or contact us directly at +251 901 049 961.');
       }
     } catch (err) {
-      // Fallback display success to user even if offline
-      setSubmitted(true);
+      setErrorMessage('Network connection error. Please try again or reach us at +251 901 049 961.');
     } finally {
       setIsSubmitting(false);
     }
@@ -75,7 +75,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
             <div>
               <h3 className="text-2xl font-bold text-[#0B1B3A] dark:text-white mb-2">Consultation Request Received</h3>
               <p className="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto">
-                Thank you, <span className="text-[#1FA971] dark:text-[#F2B84B] font-semibold">{formData.fullName}</span>. Your details have been recorded. Our advisory team will reach out to <span className="font-semibold">{formData.email}</span> within 24 hours to schedule your strategic financial assessment.
+                Thank you, <span className="text-[#1FA971] dark:text-[#F2B84B] font-semibold">{formData.fullName}</span>. Your details have been recorded in our system. Our advisory team will reach out to <span className="font-semibold">{formData.email}</span> within 24 hours to schedule your strategic financial assessment.
               </p>
             </div>
             <div className="p-4 bg-slate-50 dark:bg-white/5 rounded-xl text-xs text-slate-600 dark:text-slate-400 max-w-sm mx-auto flex items-center gap-2 text-left border border-slate-200 dark:border-white/10">
@@ -105,9 +105,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
               <AhaduLogo variant="auto" size="sm" showSubtitle={false} />
             </div>
 
+            {/* Error Alert Box */}
             {errorMessage && (
-              <div className="mb-4 p-3 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 text-amber-800 dark:text-amber-200 text-xs rounded-lg">
-                {errorMessage}
+              <div className="mb-5 p-4 bg-rose-50 dark:bg-rose-900/30 border border-rose-200 dark:border-rose-800 text-rose-800 dark:text-rose-200 text-xs rounded-xl flex items-start gap-3 animate-in fade-in duration-200">
+                <AlertCircle className="w-4 h-4 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <div className="font-bold text-rose-900 dark:text-rose-100">Submission Error</div>
+                  <div>{errorMessage}</div>
+                </div>
               </div>
             )}
 

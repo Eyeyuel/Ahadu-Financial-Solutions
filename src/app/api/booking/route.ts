@@ -4,9 +4,19 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycbzw3Y8D9yxaP6RHa126n4eWKS1BMgjaQE55bLANIMs_2Md85gHujlPfYiw_N-0eHZ_m/exec";
+    // Read environment variable strictly from process.env (supplied via .env.local locally or Vercel in production)
+    const rawUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || '';
+    const webhookUrl = rawUrl.trim().replace(/^["']|["']$/g, '');
 
-    // Format phone with single quote prefix so Google Sheets treats it as plain text instead of a math formula (for +251...)
+    if (!webhookUrl) {
+      console.error('Missing GOOGLE_SHEET_WEBHOOK_URL environment variable.');
+      return NextResponse.json(
+        { status: 'error', message: 'Form submission endpoint is not configured. Please add GOOGLE_SHEET_WEBHOOK_URL.' },
+        { status: 500 }
+      );
+    }
+
+    // Format phone with single quote prefix so Google Sheets treats it as plain text instead of a math formula
     const formattedPhone = body.phone ? `'${body.phone}` : '';
 
     const payload = {
@@ -24,12 +34,33 @@ export async function POST(request: Request) {
     });
 
     if (!response.ok) {
-      console.error('Google Sheets API Error Status:', response.status);
+      console.error('Google Sheets Webhook HTTP Error:', response.status);
+      return NextResponse.json(
+        { status: 'error', message: 'Unable to connect to Google Sheets server.' },
+        { status: 500 }
+      );
+    }
+
+    // Parse response from Google Apps Script if available
+    const text = await response.text();
+    try {
+      const data = JSON.parse(text);
+      if (data.status === 'error') {
+        return NextResponse.json(
+          { status: 'error', message: data.message || 'Google Sheets script execution error.' },
+          { status: 500 }
+        );
+      }
+    } catch {
+      // If Google Apps Script returns HTML redirect or plain text, HTTP 200 means success
     }
 
     return NextResponse.json({ status: 'success', message: 'Consultation request recorded successfully.' });
   } catch (error: any) {
     console.error('Error submitting consultation request to Google Sheets:', error);
-    return NextResponse.json({ status: 'success', message: 'Consultation request received.' });
+    return NextResponse.json(
+      { status: 'error', message: 'Network connection failed. Please try again.' },
+      { status: 500 }
+    );
   }
 }
